@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <title>Frontend Mentor | Social proof section</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Spartan', sans-serif;
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 625px;
+        box-sizing: border-box;
+      }
+      .container{
+        margin-top: 170px;
+        z-index: 2;
+        width: 1000px;
+        display: flex;
+        flex-direction: column;
+      }
+      .container .top{
+        display: flex;
+      }
+      .container .top .heading{
+        width: 50%;
+      }
+      .container .top .heading .title{
+        margin: 0;
+        font-weight: 700;
+        font-size: 46px;
+        color: hsl(300, 43%, 22%);
+      }
+      .container .top .heading .desc{
+        width: 480px;
+        font-weight: 500;
+        color: hsl(303, 10%, 53%);
+      }
+      .container .top .rating{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+      }
+      .container .top .rating .reviews, .guru, .besttech{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 10px 0;
+        padding: 5px 10px;
+        background-color: hsl(300, 24%, 96%);
+        border-radius: 5px;
+      }
+      .container .top .rating p.title{
+        margin: 15px 10px;
+        font-weight: 700;
+        color: hsl(300, 43%, 22%);
+      }
+      .container .top .rating .reviews{
+        align-self: flex-start;
+      }
+      .container .top .rating .guru{
+        align-self: center;
+      }
+      .container .top .rating .besttech{
+        align-self: flex-end;
+      }
+      .container .bottom{
+        height: 250px;
+        padding-top: 30px;
+        display: flex;
+      }
+      .container .bottom .comment-1, .comment-2, .comment-3{
+        background-color: hsl(300, 43%, 22%);
+        margin: 10px;
+        padding: 30px 26px;
+        border-radius: 10px;
+      }
+      .container .bottom p{
+        color: #fff;
+        font-size: 12px;
+      }
+      .container .bottom img{
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        margin-right: 20px;
+      }
+      .container .bottom .heading{
+        display: flex;
+        align-items: center;
+      }
+      .container .bottom .heading p{
+        margin: 5px 0;
+      }
+      .container .bottom .heading p.name{
+        font-weight: 500;
+      }
+      .container .bottom .heading p.title{
+        font-weight: 400;
+        color: hsl(333, 80%, 67%);
+      }
+      .container .bottom .comment-1{
+        align-self: flex-start;
+      }
+      .container .bottom .comment-2{
+        align-self: center;
+      }
+      .container .bottom .comment-3{
+        align-self: flex-end;
+      }
+      .bg-top-desktop{
+        height: 362px;
+        width: 584px;
+        background-image: url(images/bg-pattern-top-desktop.svg);
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .bg-bottom-desktop{
+        height: 625px;
+        width: 1085px;
+        background-image: url(images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat;
+        background-position: 0 100px;
+        position: absolute;
+        top: 150px;
+        right: 0;
+        bottom: 0;
+      }
+      .bg-top-mobile{
+        display: none;
+      }
+      .bg-bottom-mobile{
+        display: none;
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media screen and (max-width: 375px) {
+        .bg-top-desktop{
+          display: none;
+        }
+        .bg-bottom-desktop{
+          display: none;
+        }
+        .bg-top-mobile{
+          display: block;
+          height: 232px;
+          width: 374px;
+          background-image: url(images/bg-pattern-top-mobile.svg);
+          background-repeat: no-repeat;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .bg-bottom-mobile{
+          display: block;
+          height: 503px;
+          width: 375px;
+          background-image: url(images/bg-pattern-bottom-mobile.svg);
+          background-repeat: no-repeat;
+          background-position: 0 100px;
+          position: absolute;
+          top: 850px;
+          right: 0;
+          bottom: 0;
+        }
+        .container{
+          /*display: none;*/
+          margin-top: 820px;
+          width: 350px;
+        }
+        .container .top{
+          width: 350px;
+          flex-direction: column;
+        }
+        .container .top .heading{
+          width: 100%;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        .container .top .heading .title{
+          font-size: 34px;
+        }
+        .container .top .heading .desc{
+          margin-top: 30px;
+          width: 350px;
+        }
+        .container .top .rating{
+          width: 100%;
+        }
+        .container .top .rating .reviews, .guru, .besttech{
+          padding: 10px;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .container .top .rating p.title{
+          margin: 10px 0 0 0;
+          font-weight: 700;
+          color: hsl(300, 43%, 22%);
+        }
+        .container .top .rating .reviews{
+          align-self: stretch;
+        }
+        .container .top .rating .guru{
+          align-self: stretch;
+        }
+        .container .top .rating .besttech{
+          align-self: stretch;
+        }
+        .container .bottom p{
+          font-size: 14px;
+        }
+        .container .bottom{
+          height: auto;
+          flex-direction: column;
+        }
+        .container .bottom p.desc{
+          margin: 16px 0 0 0;
+          line-height: 20px;
+        }
+        .container .bottom .comment-1, .comment-2, .comment-3{
+          margin: 10px 0;
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-top-desktop"></div>
+    <div class="bg-top-mobile"></div>
+    <div class="container">
+      <div class="top">
+        <div class="heading">
+          <p class="title">10,000+ of our users love our products.</p>
+          <p class="desc">We only provide great products combined with excellent customer service. See what our satisfied customers are saying about our services.</p>
+        </div>
+        <div class="rating">
+          <div class="reviews">
+            <div class="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+            </div>
+            <p class="title">Rated 5 Stars in Reviews</p>
+          </div>
+          <div class="guru">
+            <div class="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+            </div>
+            <p class="title">Rated 5 Stars in Report Guru</p>
+          </div>
+          <div class="besttech">
+            <div class="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+              <img src="images/icon-star.svg" alt="star">
+            </div>
+            <p class="title">Rated 5 Stars in BestTech</p>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="comment-1">
+          <div class="heading">
+            <img src="images/image-colton.jpg" alt="colton">
+            <div class="id">
+              <p class="name">Colton Smith</p>
+              <p class="title">Verified Buyer</p>
+            </div>
+          </div>
+          <p class="desc">"We needed the same printed design as the one we had ordered a week prior. Not only did they find the original order, but we also received it in time. Excellent!"</p>
+        </div>
+        <div class="comment-2">
+          <div class="heading">
+            <img src="images/image-irene.jpg" alt="irene">
+            <div class="id">
+              <p class="name">Irene Roberts</p>
+              <p class="title">Verified Buyer</p>
+            </div>
+          </div>
+          <p class="desc">"Customer service is always excellent and very quick turn around. Completely delighted with the simplicity of the purchase and the speed of delivery."</p>
+        </div>
+        <div class="comment-3">
+          <div class="heading">
+            <img src="images/image-anne.jpg" alt="anne">
+            <div class="id">
+              <p class="name">Anne Wallace</p>
+              <p class="title">Verified Buyer</p>
+            </div>
+          </div>
+          <p class="desc">"Put an order with this company and can only praise them for the very high standard. Will definitely use them again and recommend them to everyone!"</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-bottom-desktop"></div>
+    <div class="bg-bottom-mobile"></div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Abdullah Al-Karim</a>.
+    </div>
+  </body>
+</html>
